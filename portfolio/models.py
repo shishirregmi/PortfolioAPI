@@ -4,7 +4,7 @@ from ckeditor.fields import RichTextField
 
 class Profile(models.Model):
     fullname = models.CharField(max_length=255)
-    about = RichTextField()
+    about = models.TextField()
 
     def __str__(self):
         return self.fullname
@@ -21,13 +21,13 @@ class Social(models.Model):
 class About(models.Model):
     profilepic = models.ImageField(upload_to='about/')
     Title = models.CharField(max_length=255)
-    Description = RichTextField()
+    Description = models.TextField()
     BirthDate = models.DateField()
     Education = models.CharField(max_length=255)
     contactEmail = models.EmailField()
     address = models.CharField(max_length=255)
     businessEmail = models.EmailField()
-    About = RichTextField()
+    About = models.TextField()
     Resume = models.FileField(upload_to='about/')
 
     def __str__(self):
